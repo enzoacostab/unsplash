@@ -13,7 +13,6 @@ export default function Submit ({ imageToUpload, uploadBy }: { imageToUpload: Im
   const { images, setImages, setImagesToShow } = useImgContext()
   const { setPopUpOpen } = usePopUpContext()
   const { label, image, url } = imageToUpload
-  const imageRef = ref(storage, `/images/${image != null ? image.name : url}`)
   
   const handleSubmit = (e: MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault()
@@ -53,6 +52,7 @@ export default function Submit ({ imageToUpload, uploadBy }: { imageToUpload: Im
     }
     
     if (uploadBy === 'File' && image !== null) {
+      const imageRef = ref(storage, `/images/${label}`)
       uploadBytes(imageRef, image, { customMetadata: { label } }).then(() => {
         getDownloadURL(imageRef).then((imgUrl) => {
           setImages([...images, { label, url: imgUrl }])

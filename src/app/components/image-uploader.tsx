@@ -17,7 +17,6 @@ export default function ImageUploader (): React.JSX.Element {
     const { value, name } = e.target
     setImageToUpload(prev => ({ ...prev, [name]: value === '' ? null : value }))
   }
-  console.log(imageToUpload.image)
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black opacity-20 z-40"></div>
