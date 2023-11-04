@@ -24,7 +24,7 @@ export default function Header (): React.JSX.Element {
   }
 
   return (
-    <header className="w-full h-20 gap-3 pt-2 flex items-center px-[3%] ">
+    <header className="w-full h-20 pt-2 flex items-center px-[3%] ">
       <Image width={150} height={200} priority src="/my_unsplash_logo.svg" alt="logo"/>
       <form className="flex w-full h-full gap-3 justify-between items-center">
         <div className="border border-[#bdbdbd] flex h-min py-3 rounded-xl w-full sm:w-[40%] gap-3 items-center px-3">

@@ -39,12 +39,12 @@ export default function Img ({ url, label }: { url: string, label: string | unde
   }
 
   return (
-    <div className='relative'>
-      <div className='absolute p-6 flex gap-2 justify-between flex-col h-full w-full top-0 left-0 rounded-xl bg-black z-10 opacity-0 hover:opacity-100 hover:bg-opacity-40 transition-all'>
+    <div className='relative flex w-fit justify-center mx-2 sm:mx-0'>
+      <div className='absolute p-6 flex gap-2 justify-between flex-col h-full w-full top-0 left-0 rounded-xl bg-black z-20 opacity-0 hover:opacity-100 hover:bg-opacity-40 transition-all'>
         <button onClick={handleClick} className="w-fit h-fit px-3 py-[1px] rounded-full transition-colors text-sm self-end hover:bg-black hover:bg-opacity-10 border-[#eb5757] border-2 text-[#eb5757]">delete</button>
-        <h2 className="text-white font-bold text-sm overflow-hidden">{label}</h2>
+        <h2 className="text-white font-bold text-xl sm:text-sm overflow-hidden">{label}</h2>
       </div>
-      <Image className='h-min rounded-xl z-20' width={500} height={500} loading="lazy" src={url} alt={label ?? 'image'}></Image>
+      <Image className='rounded-xl z-10' width={500} height={500} loading="lazy" src={url} alt={label ?? 'image'}></Image>
     </div>
   )
 }
