@@ -24,14 +24,16 @@ export default function Header (): React.JSX.Element {
   }
 
   return (
-    <header className="w-full h-20 pt-2 flex items-center px-[3%] ">
-      <Image width={150} height={200} priority src="/my_unsplash_logo.svg" alt="logo"/>
-      <form className="flex w-full h-full gap-3 justify-between items-center">
-        <div className="border border-[#bdbdbd] flex h-min py-3 rounded-xl w-full sm:w-[40%] gap-3 items-center px-3">
-          <FaMagnifyingGlass color="#bdbdbd"/>
-          <input type="text" onChange={handleChange} className="focus-visible:outline-none w-full text-black placeholder:text-[#bdbdbd]" placeholder="Search by name" />
+    <header className="w-full h-fit pt-2 flex items-center px-[4%] ">
+      <form className="flex flex-col sm:flex-row w-full h-full gap-3 justify-between items-center">
+        <div className="flex justify-between w-full sm:justify-start">
+          <Image width={150} height={200} priority src="/my_unsplash_logo.svg" alt="logo"/>
+          <div className="border border-[#bdbdbd] flex h-min py-3 rounded-xl w-full sm:w-[40%] gap-3 items-center px-3">
+            <FaMagnifyingGlass color="#bdbdbd"/>
+            <input type="text" onChange={handleChange} className="focus-visible:outline-none w-full text-black placeholder:text-[#bdbdbd]" placeholder="Search by name" />
+          </div>
         </div>
-        <button onClick={handleClick} className="bg-[#3db46d] min-w-[110px] transition-colors shadow-lg p-3 cursor-pointer hover:bg-green-700 font-semibold rounded-xl text-sm text-white flex items-center gap-2" >Add a photo</button>
+        <button onClick={handleClick} className="bg-[#3db46d] w-full sm:w-[150px] transition-colors shadow-lg p-3 cursor-pointer hover:bg-green-700 font-semibold rounded-xl text-sm text-white flex justify-center items-center gap-2">Add a photo</button>
       </form>
     </header>
   )
