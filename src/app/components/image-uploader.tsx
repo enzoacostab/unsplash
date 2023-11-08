@@ -24,12 +24,12 @@ export default function ImageUploader (): React.JSX.Element {
         <form method="post" className="flex flex-col p-6 gap-1">
           <h1 className="font-semibold">Add a new photo</h1>
           <label htmlFor="" className="text-sm mt-2">Label</label>
-          <input name="label" onChange={handleChange} className="border p-3 text-sm rounded-lg border-[#787878] placeholder:text-[#bdbdbd]" type="text" placeholder="A man wearing a hat standing next to a rock"/>
+          <input name="label" onChange={handleChange} className="border px-2 py-3 text-sm rounded-lg border-[#787878] placeholder:text-[#bdbdbd]" type="text" placeholder="Add a label"/>
           <label htmlFor="" className="text-sm mt-2">Upload by</label>
           <div className="flex justify-start gap-3"><Select setUploadBy={setUploadBy}/>
           {uploadBy === "URL" 
             ? <>
-                <input onChange={handleChange} className="border p-2 text-sm w-[50%] rounded-lg border-[#787878] placeholder:text-[#bdbdbd]" name="url" type="text" placeholder="https://images.unsplash.com/photo-1682687220591-cfd91ab5c1b5?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                <input onChange={handleChange} className="border p-2 text-sm w-[50%] rounded-lg border-[#787878] placeholder:text-[#bdbdbd]" name="url" type="text" placeholder="Add a link"/>
               </>
             : imageToUpload.image === null
               ? <AddFileButton setImageToUpload={setImageToUpload}/>

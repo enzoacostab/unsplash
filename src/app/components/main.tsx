@@ -53,10 +53,11 @@ export default function Main (): React.JSX.Element {
   }, [])
   
   return (
-    <main className="flex-col sm:flex-row flex gap-[3%] px-2 justify-center py-10 w-full h-full">
-      <div className="flex flex-col-reverse justify-end w-full sm:w-[30%] gap-7 mb-7 items-center">{imagesToShow.map(({ url, label }: ImgType, i) => i % 3 === 0 ? <Img key={label} url={url} label={label}/> : null)}</div>
-      <div className="flex flex-col-reverse justify-end w-full sm:w-[30%] gap-7 mb-7 items-center">{imagesToShow.map(({ url, label }: ImgType, i) => i % 3 === 1 ? <Img key={label} url={url} label={label}/> : null)}</div>
-      <div className="flex flex-col-reverse justify-end w-full sm:w-[30%] gap-7 mb-7 items-center">{imagesToShow.map(({ url, label }: ImgType, i) => i % 3 === 2 ? <Img key={label} url={url} label={label}/> : null)}</div>
+    <main className="flex-col sm:flex-row flex gap-[3%] px-[4%] justify-center py-10 w-full h-full">
+      <div className="flex flex-col-reverse justify-end w-full sm:w-fit gap-7 mb-7 items-center">{imagesToShow.map(({ url, label }: ImgType, i) => i % 4 === 0 ? <Img key={label} url={url} label={label}/> : null)}</div>
+      <div className="flex flex-col-reverse justify-end w-full sm:w-fit gap-7 mb-7 items-center">{imagesToShow.map(({ url, label }: ImgType, i) => i % 4 === 1 ? <Img key={label} url={url} label={label}/> : null)}</div>
+      <div className="flex flex-col-reverse justify-end w-full sm:w-fit gap-7 mb-7 items-center">{imagesToShow.map(({ url, label }: ImgType, i) => i % 4 === 2 ? <Img key={label} url={url} label={label}/> : null)}</div>
+      <div className="flex flex-col-reverse justify-end w-full sm:w-fit gap-7 mb-7 items-center">{imagesToShow.map(({ url, label }: ImgType, i) => i % 4 === 3 ? <Img key={label} url={url} label={label}/> : null)}</div>
     </main>
   )
 }
