@@ -22,8 +22,8 @@ export default function Img ({ url, label }: { url: string, label: string | unde
         toast.error('There was an error trying to delete the image')
       }
     })
-
-    if (querySnapshot === null) {
+    
+    if (querySnapshot.docs.length === 0) {
       const imageRef = ref(storage, `/images/${label}`)
       try {
         await deleteObject(imageRef)
